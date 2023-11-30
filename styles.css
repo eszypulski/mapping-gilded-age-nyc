@@ -163,6 +163,17 @@
 
 
 /* MY STYLES HEADER*/
+p {
+    font-family: Jost;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.28px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    line-height: 115%;
+    
+   
+}
 
 .gilded-header-bar
 {
@@ -172,7 +183,7 @@
 .gilded-title {
 font-family: PlayfairDisplayRoman-SemiBold;
 font-size: 25px;
-color: #FFFFFF;
+color: rgb(255, 255, 255);
 letter-spacing: 0.45px;
 text-transform: none;
 padding-bottom: 25px;
@@ -201,8 +212,12 @@ padding-bottom: 25px;
     color: #c9c0c0!important; 
 }
 
+#home-page-content {
+    background-color: rgb(237, 241, 245);
+    color: rgb(33, 33, 38);
+}
 #big-bucket-left {
-    background-color: rgb(238, 182, 182);
+
     padding-left:25px;
     padding-right:10px;
 
@@ -210,14 +225,88 @@ padding-bottom: 25px;
 }
 
 #big-bucket-right {
-    background-color: rgb(185, 174, 235);
+  
     padding-right:5px;
 
 }
 
 #intro-text {
-    background-color: rgb(217, 149, 149);
+    
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 28px;
+   
+
+}
+
+#info-block {
+    
+}
+
+#info-block-source {
+    font-family: Jost;
+    font-weight: 200;
+font-size: 21px;
+letter-spacing: 0.28px;
+
+margin-bottom: 0px;
+}
+
+
+#info-block-title {
+    font-family: PlayfairDisplayRoman-SemiBold;
+font-size: 21px;
+letter-spacing: 0.28px;
+}
+
+#info-block-loc {
+    font-family: PlayfairDisplayRoman-SemiBold;
+    font-size: 21px;
+    letter-spacing: 0.28px;
+}
+
+
+#description-block {
+   
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#quote-block {
+
+  padding-left: 15%;
+  padding-right: 15%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+font-family: PlayfairDisplayItalic-Medium !important;
+font-size: 23px;
+line-height: 120%;
+letter-spacing: 0.3px;
+}
+
+#quote-citation-block {
+ 
+    text-align: right;
+    font-family: Jost-Italic;
+font-size: 16px;
+letter-spacing: 0.28px;
+margin-top: 10px;
+
+}
+
+.no-margin {
+    margin:0px;
+}
+
+/* Map Stuff */
+
+#map {
+    height: 400px;
+}
+
+#key {
+    width: 50%;
+    background-color: bisque;
+    text-align: right;
 
 }

@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-
-<!--Leaflet CSS & Script-->
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-    crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-    crossorigin=""></script>
-
 <!-- Pure CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
 integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" 
@@ -25,13 +15,12 @@ crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <title>Mapping Inequality in Gilded Age New York</title>
 
-<!--Fonts-->
+    <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300,400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;1,100;1,200&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
 </head>
 
-<!------------------------------------------------------------------------------------------->
 <body>
 <!--HEADER-->
     <div class="custom-wrapper pure-g" id="menu">
@@ -56,21 +45,33 @@ crossorigin="anonymous">
 
 <!--PAGE CONTENT-->
 <!--LEFT DIV-->
-    <div class="pure-g" width="100%">
+    <div class="pure-g" id="home-page-content" width="100%">
         <div class="pure-u-1 pure-u-md-1-2" id="big-bucket-left">
             <div id= "intro-text">
-            </br></br></br> Intro text goes here </br></br></br>
+                <p>This project is an attempt to map inequality in Gilded Age New York through two of its chroniclers: the novelist Edith Wharton and the journalist and photographer Jacob Riis. 
+</p>
+                <p>Click any marker on the map to learn more.</p>
             </div>
 
             <div id="info-block">
+                <div id="info-block-source">
+                 Wharton’s New York
+                </div>
+                <div class="pure-g">
+                    <div class="pure-u-1 pure-u-md-2-3" id="info-block-title">
+                        Selden’s Home, House of Mirth
+                    </div>
+                    <div class="pure-u-1 pure-u-md-1-3" id="info-block-loc">
+                        50th and 5th
+                    </div>
+                </div>
                 <div id="description-block">
-            </br></br></br> Info text goes here </br></br></br>
+            <p>Lily's would-be beau, Lawrence Selden, lives in the Benedick on 50th Street. The Benedick was not a real building (though it represents a typical type of building where a bachelor of Selden's status would live), and if it had been real, it likely would have been located elsewhere. This address is right across the street from St. Patrick's Cathedral, which Lily would likely have noted. Another reminder that Wharton was living in Lenox, Massachuttsetts at the time she wrote this novel. </p>
                 </div>
                 <div id="quote-block">
-                </br></br></br> quote text goes here </br></br></br>
-
+                "As she turned into the side street, a vague memory stirred in her. The row of budding trees, the new brick and limestone house-fronts, the Georgian flat-house with flower-boxes on its balconies, were merged together into the setting of a familiar scene. It was down this street that she had walked with Selden, that September day two years ago; a few yards ahead was the doorway they had entered together."
                     <div id="quote-citation-block">
-                    </br>citation goes here</br>
+                        Chapter X, House of Mirth,  19xx
                     </div>
                 </div>
 
@@ -94,17 +95,11 @@ crossorigin="anonymous">
         
         </div>
 <!--END LEFT DIV-->
-
-
-<!--RIGHT DIV-->
-        <div class="pure-u-1 pure-u-md-1-2" id="big-bucket-right"> 
-            <!--MAP IS HERE-->
-            <div id="key">Key: ___here will be the key info</div>
-            <div id="map"></div>
+        <div class="pure-u-1 pure-u-md-1-2" id="big-bucket-right"> <p>no</p>
            </div>
         
     </div>
-    <script src="map.js"></script>
+
     <script src="script.js"></script>
 </body>
 
