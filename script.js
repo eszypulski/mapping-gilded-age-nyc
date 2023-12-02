@@ -45,3 +45,46 @@
 
     window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
     })(this, this.document);
+
+
+// Adjusting the map height
+
+    function adjustMapHeight() {
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        // threshold where the height changes
+        var thresholdWidth = 568; // Same value as "sm" in pure css
+
+        // Check if the window width is narrower than the threshold
+        if (windowWidth < thresholdWidth) {
+            //  div height for narrow screens
+            document.getElementById('map').style.height = '120px'; 
+        } else {
+            // div height for larger screens
+            document.getElementById('map').style.height = '100vh'; 
+        }
+    }
+
+    //Map!
+
+    // Create a new Leaflet map
+let Map;
+Map = L.map("map");
+
+//tile layer from our example
+L.tileLayer('https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg', {
+        maxZoom: 19,
+        attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.'
+}).addTo(Map);
+
+Map.setView([40.7128, -74.0060], 16);
+    
+    
+    // Initial adjustment on page load
+    adjustMapHeight();
+
+    // Attach the function to the window resize event
+    window.addEventListener('resize', adjustMapHeight);
+
+
+

@@ -230,6 +230,8 @@ padding-bottom: 25px;
 
 }
 
+
+
 #intro-text {
     
     margin-top: 15px;
@@ -301,12 +303,11 @@ margin-top: 10px;
 /* Map Stuff */
 
 #map {
-    height: 400px;
+    height: 100vh;
 }
 
 #key {
-    width: 50%;
-    background-color: bisque;
+    width: 100%;
     text-align: right;
 
 }
