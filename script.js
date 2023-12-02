@@ -65,13 +65,34 @@
         }
     }
 
-    //Map!
+    //////////////////////////Map!/////////////////////////////////////
 
     // Create a new Leaflet map
 let Map;
 Map = L.map("map");
 
-//tile layer from our example
+
+//Set starting location of the map
+
+
+//Set starting zoom of the map
+
+
+//Set marker style
+
+
+//Set behavior when a marker is clicked
+
+    // Pan to
+
+
+    // Pop Up -- should only display the title and source
+
+
+    // Call the other information into the left div
+
+
+//Add tile layer - watercolor maps
 L.tileLayer('https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg', {
         maxZoom: 19,
         attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.'
