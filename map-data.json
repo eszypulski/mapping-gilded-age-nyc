@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "author": "Wharton",
+        "author": "Edith Wharton",
         "sourcetext": "The House of Mirth",
         "year": 1905,
         "nickname": "Small restaurant",
@@ -13,7 +13,7 @@
     },
     {
         "id": 2,
-        "author": "Wharton",
+        "author": "Edith Wharton",
         "sourcetext": "The House of Mirth",
         "year": 1905,
         "nickname": "Bertha Dorset's House",
@@ -25,7 +25,7 @@
     },
     {
         "id": 3,
-        "author": "Wharton",
+        "author": "Edith Wharton",
         "sourcetext": "The House of Mirth",
         "year": 1905,
         "nickname": "Lawrence Selden's Apartment, \"The Benedick\"",
@@ -37,7 +37,7 @@
     },
     {
         "id": 4,
-        "author": "Wharton",
+        "author": "Edith Wharton",
         "sourcetext": "The House of Mirth",
         "year": 1905,
         "nickname": "Nettie Struther's Apartment",
@@ -49,12 +49,13 @@
     },
     {
         "id": 5,
-        "author": "Wharton",
+        "author": "Edith Wharton",
         "sourcetext": "The House of Mirth",
         "year": 1905,
         "nickname": "Simon Rosedale's House",
         "description": "Simon Rosedale is the only Jewish character in The House of Mirth; most of Wharton's other characters regard him with implicit antisemitism (as does, arguably, Wharton herself). His rise in society contrasts with Lily's fall, and the welcome he eventually receives from the people who mocked him before demonstrates how focused on wealth and status Lily's former friends are. (Notably, he is one of the only people from her \"old\" life to show courtesy toward her at the end of the novel -- when she is unwell, he walks her home to her boarding house and offers financial help.)\n\nWhen he \"makes it,\" he builds a grand house. While I think it's more likely that it would be further south, I chose to place him at the site of the Warburg mansion, which was (I believe) the first 5th Avenue mansion built for a Jewish owner. This is a bit of an anachronism -- Felix Warburg built his mansion in 1908, three years after the novel was published -- but Warburg likely faced the same prejudices in real life as the fictional Mr. Rosedale did in novel.",
         "address": "5th Avenue",
+        "image": "<img src='images/warburg-mansion.jpg'>"
         "latitude": 40.785843,
         "longitude": -73.957266
     }

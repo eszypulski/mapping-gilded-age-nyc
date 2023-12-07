@@ -70,18 +70,89 @@
     // Create a new Leaflet map
 let Map;
 Map = L.map("map");
+//Add tile layer - watercolor maps
+L.tileLayer('https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg', {
+        maxZoom: 16,
+        minZoom: 13,
+        attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.'
+}).addTo(Map);
+
 
 
 //Set starting location of the map
 
+Map.setView([40.7566,-73.9806], 13);
+    
 
-//Set starting zoom of the map
+// Add map data
+L.geoJSON(mapData, {
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup ("<h3>" + feature.properties.nickname + "</h3> <hr> <h3>" + feature.properties.sourcetext + "</h3>");
+        layer.on('click', function() {
+            let infoBlock = document.getElementById('info-block-source');
+            infoBlock.innerHTML = feature.properties.author + "\'s New York";
+            let infoBlockTitle = document.getElementById('info-block-title');
+            infoBlockTitle.innerHTML = feature.properties.nickname + ", <i>" + feature.properties.sourcetext + "</i>";
+            let infoBlockLoc = document.getElementById ('info-block-loc');
+            infoBlockLoc.innerHTML = feature.properties.address;
+            let descriptionBlock = document.getElementById ('description-block');
+            descriptionBlock.innerHTML = "<p>"+ feature.properties.description + "</p>";
+            let quote = document.getElementById ('quote');
+            quote.innerHTML = feature.properties.quote ||'';
+            let quoteCitationBlock = document.getElementById ('quote-citation-block');
+            quoteCitationBlock.innerHTML = "<i>" + feature.properties.sourcetext +"</i>, " + feature.properties.year;
+            let image = document.getElementById('image');
+            image.innerHTML = "<img src='images/" + feature.properties.image + "' alt='"  +feature.properties.imagealt + "'>" || '';
+        });
+    }
+}).addTo(Map);
+
+// Set bounds for the map
+      let southWest = L.latLng(40.6894, -74.037); 
+      let northEast = L.latLng(40.8325, -73.9153); 
+      let bounds = L.latLngBounds(southWest, northEast);
+
+      Map.setMaxBounds(bounds);
+      Map.on('drag', function () {
+          Map.panInsideBounds(bounds, { animate: false })
+      });
+
+/*
+   // Assuming mapData is defined in map-data.js
+        var geojsonData = mapData;
+
+        // Create a GeoJSON layer
+        var geojsonLayer = L.geoJSON(geojsonData, {
+            onEachFeature: function (feature, layer) {
+                // Bind a popup with the author's name to each marker
+                layer.bindPopup(feature.properties.author);
+
+                // Add a click event to update the content of the info-block-source div
+                layer.on('click', function () {
+                    var infoBlock = document.getElementById('info-block-source');
+                    infoBlock.innerHTML = "Author: " + feature.properties.author;
+                });
+            }
+        }).addTo(map);
+
+*/
+
 
 
 //Set marker style
 
 
 //Set behavior when a marker is clicked
+Map.on('click',function(e) {
+    let currentMarker = e.latlng;
+    // Zoom and pan to location
+    Map.flyTo(currentMarker, 16);
+    
+}
+
+);
+
+
 
     // Pan to
 
@@ -92,14 +163,7 @@ Map = L.map("map");
     // Call the other information into the left div
 
 
-//Add tile layer - watercolor maps
-L.tileLayer('https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg', {
-        maxZoom: 19,
-        attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.'
-}).addTo(Map);
 
-Map.setView([40.7128, -74.0060], 16);
-    
     
     // Initial adjustment on page load
     adjustMapHeight();

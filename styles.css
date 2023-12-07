@@ -164,8 +164,12 @@
 
 /* MY STYLES HEADER*/
 p {
-    font-family: Jost;
+    font-family: 'Source Sans 3', sans-serif;
+
+
+    
     font-weight: 300;
+  
     font-size: 18px;
     letter-spacing: 0.28px;
     margin-bottom: 10px;
@@ -200,7 +204,8 @@ padding-bottom: 25px;
 }
 
 .header-link-text {
-    font-family: Jost-Regular;
+    font-family: 'Source Sans 3', sans-serif;
+
     font-size: 18px;
     color: #FFFFFF;
     letter-spacing: 0.3px;
@@ -245,9 +250,10 @@ padding-bottom: 25px;
 }
 
 #info-block-source {
-    font-family: Jost;
-    font-weight: 200;
-font-size: 21px;
+    font-family: 'Source Sans 3', sans-serif;
+
+    font-weight: 400;
+font-size: 16px;
 letter-spacing: 0.28px;
 
 margin-bottom: 0px;
@@ -289,11 +295,20 @@ letter-spacing: 0.3px;
 #quote-citation-block {
  
     text-align: right;
-    font-family: Jost-Italic;
+    font-family: 'Source Sans 3', sans-serif;
+
+
 font-size: 16px;
 letter-spacing: 0.28px;
 margin-top: 10px;
 
+}
+
+img {
+    max-height: 400px;
+    width: 100% ;
+    object-fit: cover;
+    margin-top: 10px;
 }
 
 .no-margin {
