@@ -71,7 +71,9 @@ const mapData = {
       "nickname": "Nettie Struther's Apartment",
       "description": "As part of her charitable work when Lily was wealthy, she paid for a woman named Nettie Struther to recover from disease at a sanitorium upstate. Toward the end of the novel, it is Nettie who offers Lily charity, even though Nettie is working class herself.\n\nNettie lives \"three blocks\" from Bryant Park. Contemporary readers might have known which direction that was likely to be. To make an educated guess, I consulted an 1880 neighborhood map via Mapping Historical New York, a project sponsored by Columbia University.  I placed Nettie on the most densely populated block that fit Wharton's description. People with a variety of working-class professions (garment workers, laborers, etc.) lived on the block at the time. ",
       "quote": "\n\n“Oh, but I can’t leave you like this—you’re not fit to go home alone. And I can’t go with you either!... You see, it’s my husband’s night-shift—he’s a motor-man—and the friend I leave the baby with has to step upstairs to get HER husband’s supper at seven. I didn’t tell you I had a baby, did I? She’ll be four months old day after tomorrow, and to look at her you wouldn’t think I’d ever had a sick day. I’d give anything to show you the baby, Miss Bart, and we live right down the street here—it’s only three blocks off.” [Nettie] lifted her eyes tentatively to Lily’s face, and then added with a burst of courage: “Why won’t you get right into the cars and come home with me while I get baby’s supper? It’s real warm in our kitchen, and you can rest there, and I’ll take YOU home as soon as ever she drops off to sleep.”\"\n",
-      "address": "\"Three blocks off\" Bryant Park"
+      "address": "\"Three blocks off\" Bryant Park",
+      "image": "",
+      "imagealt": ""
     }
   },
 
@@ -91,6 +93,7 @@ const mapData = {
       "address": "5th Avenue",
       "image": "warburg-mansion-2.jpeg",
       "imagealt": "Photograph of the Felix Warburg Mansion, as seen in 1925."
+      
     }
   },
 
