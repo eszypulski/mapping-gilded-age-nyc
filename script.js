@@ -46,24 +46,35 @@
     window.addEventListener(WINDOW_CHANGE_EVENT, closeMenu);
 })(this, this.document);
 
-
-// Adjusting the map height
-
-function adjustMapHeight() {
-    var windowWidth = window.innerWidth || document.documentElement.clientWidth;
-
-    // threshold where the height changes
-    var thresholdWidth = 568; // Same value as "sm" in pure css
-
-    // Check if the window width is narrower than the threshold
+// Adjust the title text size
+function adjustTitleSize() {
+    // Get the width of the window
+    let windowWidth = window.innerWidth || document.documentElement.clientWidth;
+    
+    // Set the threshold width
+    let thresholdWidth = 568; // Same width as declared in purecss
+    
+    // Set the font size for window widths below the threshold
+    let smallFontSize = 15; // Size when the window is < 568
+    
+    // Get the element with the ID 'gilded-title'
+    let gildedTitle = document.getElementById('gilded-title');
+    
+    // Check the window width and apply the font size
     if (windowWidth < thresholdWidth) {
-        //  div height for narrow screens
-        document.getElementById('map').style.height = '120px';
+        gildedTitle.style.fontSize = smallFontSize + 'px';
     } else {
-        // div height for larger screens
-        document.getElementById('map').style.height = '100vh';
+        // Use the normal font size if the window isn't so small
+        gildedTitle.style.fontSize = '';
     }
 }
+
+window.addEventListener('resize', adjustTitleSize);
+window.addEventListener('load', adjustTitleSize);
+
+
+   
+
 
 //////////////////////////Map!/////////////////////////////////////
 
@@ -78,17 +89,52 @@ L.tileLayer('https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/
 }).addTo(Map);
 
 
-
 //Set starting location of the map
 
 Map.setView([40.7566, -73.9806], 13);
 
+//add icons
 
+let iconMapping = {
+ "The House of Mirth": "houseofmirth.png",
+ "The Age of Innocence": "ageofinnocence.png",
+ "How the Other Half Lives": "jacobriis.png",
+ "The Custom of the Country": "customofthecountry.png"
+};
+
+// function to make icon mapping work - get the icon for the feature based on sourcetext
+function getMarkerIcon(feature) {
+    let sourcetext = feature.properties.sourcetext;
+    if (iconMapping.hasOwnProperty(sourcetext)) {
+        let iconURL = 'images/' + iconMapping[sourcetext];
+        return L.icon ({
+            iconUrl: iconURL,
+            iconSize: [33, 43],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+
+        });
+    } else {
+        //return the default icon if not
+        return L.Icon.Default();
+    }
+    }
+        
 // Add map data
 L.geoJSON(mapData, {
+    pointToLayer: function (feature, latlng) {
+        var markerIcon = getMarkerIcon(feature);
+        return L.marker(latlng, { icon: markerIcon });
+    },
     onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.nickname + "</br>" + feature.properties.sourcetext);
-        layer.on('click', function () {
+        
+        layer.bindPopup("<em>"+feature.properties.sourcetext + "</em>: </br>" + feature.properties.nickname);
+        
+        layer.on('click', function (e) {
+            let mapMarker = e.latlng;
+            // Zoom and pan to location
+            Map.flyTo(mapMarker, 14);
+        
             let infoBlock = document.getElementById('info-block-source');
             infoBlock.innerHTML = feature.properties.author + "\'s New York";
             let infoBlockTitle = document.getElementById('info-block-title');
@@ -105,7 +151,7 @@ L.geoJSON(mapData, {
             /*let image = document.getElementById('image');
             if (image == null) {
                 image.innerHTML = ""}
-                else { image.innerHTML = "<img src='images/" + feature.properties.image + "' alt='" + feature.properties.imagealt + "'>" || '';}*/
+                else { image.innerHTML = "<img src='images/" + feature.properties.image + "' class alt='" + feature.properties.imagealt + "'>" || '';}*/
 
 
             /*let image = document.getElementById('image');
@@ -115,14 +161,18 @@ L.geoJSON(mapData, {
 
             let image = document.getElementById('image');
             if (image !== null) {
-            image.innerHTML = "<img src='images/" + feature.properties.image + "' alt='" + feature.properties.imagealt + "'>" || "";}
+            image.innerHTML = "<img src='images/" + feature.properties.image + "' class= 'map-image' alt='" + feature.properties.imagealt + "'>" || "";}
 
           
      
             
-        });
+        })
+        
+        ;
     }
 }).addTo(Map);
+
+
 
 // Set bounds for the map
 let southWest = L.latLng(40.6894, -74.037);
@@ -134,25 +184,6 @@ Map.on('drag', function () {
     Map.panInsideBounds(bounds, { animate: false })
 });
 
-/*
-   // Assuming mapData is defined in map-data.js
-        var geojsonData = mapData;
-
-        // Create a GeoJSON layer
-        var geojsonLayer = L.geoJSON(geojsonData, {
-            onEachFeature: function (feature, layer) {
-                // Bind a popup with the author's name to each marker
-                layer.bindPopup(feature.properties.author);
-
-                // Add a click event to update the content of the info-block-source div
-                layer.on('click', function () {
-                    var infoBlock = document.getElementById('info-block-source');
-                    infoBlock.innerHTML = "Author: " + feature.properties.author;
-                });
-            }
-        }).addTo(map);
-
-*/
 
 
 
@@ -163,7 +194,7 @@ Map.on('drag', function () {
 Map.on('click', function (e) {
     let currentMarker = e.latlng;
     // Zoom and pan to location
-    Map.flyTo(currentMarker, 16);
+    Map.flyTo(currentMarker, 14);
 
 }
 
@@ -180,13 +211,47 @@ Map.on('click', function (e) {
 // Call the other information into the left div
 
 
+function adjustMapHeight() {
+    let windowWidth = window.innerWidth || document.documentElement.clientWidth;
+    let mapFill = document.getElementById('map');
+  
+
+    if (windowWidth < 768) {
+        // Set height to the correct size for narrow screens
+        mapFill.style.height = '250px';
 
 
-// Initial adjustment on page load
-adjustMapHeight();
+    } else {
+        // Set height to full window height for larger screens
+        mapFill.style.height = '100vh';
+      
+    }
+}
 
-// Attach the function to the window resize event
+// Call the function when the window is resized
 window.addEventListener('resize', adjustMapHeight);
 
+// Call the function on page load
+window.addEventListener('load', adjustMapHeight);
+
+
+// Assuming 'Map' is your Leaflet map object
+
+// Create a custom control
+var legendControl = L.control({ position: 'topright' });
+
+// Define the content for the legend
+legendControl.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'legend'); // 'legend' is a CSS class for styling
+
+    // Add legend content here, for example:
+    div.innerHTML += '<p>Legend Content</p>';
+    div.innerHTML += '<p>Another Line</p>';
+    
+    return div;
+};
+
+// Add the control to the map
+legendControl.addTo(Map);
 
 
