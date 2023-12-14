@@ -163,6 +163,9 @@ L.geoJSON(mapData, {
             if (image !== null) {
             image.innerHTML = "<img src='images/" + feature.properties.image + "' class= 'map-image' alt='" + feature.properties.imagealt + "'>" || "";}
 
+            let imageCaption = document.getElementById('image-caption');
+            imageCaption.innerHTML = feature.properties.imagecaption || '';
+
           
      
             
@@ -244,9 +247,9 @@ var legendControl = L.control({ position: 'topright' });
 legendControl.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'legend'); // 'legend' is a CSS class for styling
 
-    // Add legend content here, for example:
-    div.innerHTML += '<p>Legend Content</p>';
-    div.innerHTML += '<p>Another Line</p>';
+    // Add legend content here:
+    div.innerHTML += '<b>Wharton sites:</b></br><img src="images/whartonkey.png">';
+    div.innerHTML += '</br><b>Riis sites:</b></br><img src="images/whartonkey2.png">';
     
     return div;
 };

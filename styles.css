@@ -79,6 +79,11 @@
 
 }*/
 
+a {
+    color:darkslateblue;  
+    text-decoration-line: underline;
+}
+
 .leaflet-popup-content-wrapper .leaflet-popup-tip {
     background:  rgb(237, 241, 245);
 
@@ -221,8 +226,8 @@ padding-bottom: 25px;
 
 .header-link-text {
     font-family: 'Source Sans 3', sans-serif;
-
-    font-size: 18px;
+font-weight: 400;
+    font-size: 20px !important;
     color: #FFFFFF;
     letter-spacing: 0.3px;
      
@@ -240,8 +245,9 @@ padding-bottom: 25px;
 #big-bucket-left {
 
     padding-left:25px;
-    padding-right:10px;
-
+    padding-right:25px;
+    height: 90vh;
+    overflow:auto;
 
 }
 
@@ -291,6 +297,7 @@ letter-spacing: 0.28px;
     font-weight: 400;
     font-size: 19px;
     letter-spacing: 0.28px;
+    text-align: right;
 }
 
 
@@ -332,6 +339,14 @@ margin-top: 10px;
     margin-top: 10px;z
 }
 
+#image-caption {
+    font-family: 'Source Sans 3', sans-serif;
+font-weight:300;
+text-align: right;
+
+    font-size: 13px;
+}
+
 .no-margin {
     margin:0px;
 }
@@ -339,7 +354,7 @@ margin-top: 10px;
 /* Map Stuff */
 
 #map {
-   height:100vh;
+   height:90vh;
 }
 
 #key {
@@ -355,3 +370,166 @@ margin-top: 10px;
 #small-content-div {
 
 }
+
+.legend {
+    background-color: #ffffff;
+    opacity: 80%;
+    padding: 10px;
+   font-family: 'Source Sans 3', sans-serif;
+    font-weight:300;
+    font-size: 14px;
+}
+
+.leaflet-container {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight:300;
+    font-size: 10px;
+    line-height: 120%;
+}
+
+
+
+/* About Page Styles */
+
+#about-page-content {
+  background-color: rgb(237, 241, 245);
+  padding: 25px;
+  padding-right: 40px;
+  max-width: 100%;
+
+}
+
+
+#about-page-title {
+    margin-top: 0px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+font-size: 27px;
+letter-spacing: 0.28px;
+}
+
+#about-nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#about-nav-container {
+    margin-bottom: 35px;
+
+}
+
+
+li {
+    font-family: 'Source Sans 3', sans-serif;
+
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.28px;
+    padding-bottom: 10px;
+}
+
+.inline-li {
+    display: inline;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: 400px;
+   
+
+}
+
+h3 {
+
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+font-size: 22px;
+letter-spacing: 0.28px;
+margin-top: 20px;
+margin-bottom: 10px;
+}
+#context {
+
+
+}
+
+#about-the-map {
+
+}
+
+#gathering-data {
+
+}
+
+#acknowledgments {
+
+}
+
+#data-sources {
+
+}
+
+#about-me {
+
+}
+
+.about-img {
+ 
+   margin-top: 15px;
+    object-fit: contain;
+    padding: auto;
+  }
+  
+  .inline-image {
+    display: inline-block;
+    position: relative;
+
+  }
+  
+  .inline-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .inline-image-caption {
+    position: relative;
+    width: 100%;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    text-align: left; /* Adjust the text alignment as needed */
+    padding: 5px; /* Add padding for spacing around the caption */
+    padding-bottom: 15px;
+    box-sizing: border-box; /* Include padding in the width calculation */
+  }
+
+
+
+  .about-quote-block {
+
+    font-style: italic;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0.3px;
+  }
+  
+  .about-quote-citation-block {
+   
+      text-align: right;
+      font-family: 'Source Sans 3', sans-serif;
+      padding-bottom:25px;
+  
+  
+  font-size: 16px;
+  letter-spacing: 0.28px;
+  margin-top: 10px;
+  
+  }
